@@ -125,7 +125,7 @@ By adding a row and signing its tag, the certifier states:
 
 | Artifact | Version | File | SHA-256 | Level | Certifier | Tag | Date |
 |---|---|---|---|---|---|---|---|
-| *CortexOS and the Science of Mind* | v4 | `CortexOS_Science_of_Mind/cortexos_science_of_mind.pdf` | `50ad0db2f7a68fef0e32fa3ecb955537e018a9ab2be4b4745715bccf6d5b81af` | L3 | James P. Dayson, for Auralethi | `cert/csotm-v4` | YYYY-MM-DD |
+| *CortexOS and the Science of Mind* | v4 | `CortexOS_Science_of_Mind/cortexos_science_of_mind.pdf` | `50ad0db2f7a68fef0e32fa3ecb955537e018a9ab2be4b4745715bccf6d5b81af` | L3 | James P. Dayson, for Auralethi | `cert/csotm-v4` | 2026-10-03 |
 
 Documents 1–4 above predate this index. They will be registered at the level of review they actually received, and their records will say so.
 
