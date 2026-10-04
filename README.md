@@ -55,6 +55,18 @@ A philosophical/ethical companion to the safety research. Argues that the centra
 
 This manuscript is the value framework underneath the safety work. It is not a research paper; it is the orientation the research papers are written from.
 
+### 5. *CortexOS and the Science of Mind: A Retrospective Mapping of an Introspectively Designed Cognitive Architecture to Cognitive Science, Neuroscience and Psychology*
+
+**Folder:** `CortexOS_Science_of_Mind/` — `cortexos_science_of_mind.pdf`, LaTeX source, `refs.bib`, `CERTIFICATION.md`, and both adversarial reviews
+**Status:** v4, preprint, 2026. **Certified L3** — see *Certified Releases* below.
+**Length:** 13 pages.
+
+CortexOS is a layered cognitive architecture that was designed by introspection. This paper asks a narrow question: does a disciplined introspective decomposition recover *functional distinctions* that the scientific literature also draws? Each component is mapped to the cognitive-science, neuroscience and psychology literature and graded conservatively — established mechanism (same function **and** same structure), functional analogy, speculative, or deliberate engineering departure. Of 34 correspondences: 8 established, 18 analogies, 2 speculative, 6 departures made for safety or auditability. The strongest matches are effort allocation (the expected value of control), salience-weighted memory with adaptive forgetting, the actual–ideal structure of the identity stance, and pre-committed reflexes (implementation intentions).
+
+The mapping is retrospective and was produced by the design team, so it is evidence of correspondence, not independent confirmation. The paper names the alternative explanations it does not yet exclude, specifies a blinded validation protocol with negative controls, and gives behavioral predictions that would count against it.
+
+It is also the first worked example of a **Human Certification of Responsibility**. Its Appendix A and `CERTIFICATION.md` record the full production chain — AI-assisted drafting, two adversarial Tenth Man reviews, and the revisions they forced (the headline result got numerically weaker; its claims got more defensible) — and the PDF builds reproducibly from its source, so its digest can be checked by anyone.
+
 ---
 
 ## Suggested Reading Order
@@ -65,6 +77,7 @@ For a researcher coming to this work cold:
 2. Read **Memory as Inference** for the memory-layer framework. The two papers share an argumentative structure; reading them in sequence makes the underlying claim about structural layers visible.
 3. Read the **Case Study** for grounded evidence of the relational failure modes. The Reader's Note, Abstract, and Section 4 (Observed Manifestations) are the fastest path to seeing what the failure modes look like in a real interaction record.
 4. Read **The Code and the Sword** if you want to understand why this work was written at all, and what the author believes is at stake beyond the technical safety question.
+5. Read **CortexOS and the Science of Mind** for how the architecture behind this program compares with the scientific literature — and, in its Appendix A, for how AI-assisted work is reviewed, challenged and certified here.
 
 For a non-academic reader:
 
@@ -84,6 +97,72 @@ The work is single-author, with named AI collaborators acknowledged where they h
 
 The single-subject methodology and its limits are addressed explicitly in the case study's Section 2.5 and Section 6. The theoretical papers' limits — RSR's seven unwitnessed failure modes and Memory as Inference's lack of empirical validation — are likewise stated rather than minimized.
 
+AI systems assist this work — with research, drafting, analysis and adversarial review — and are named where they contribute. They are contributors, never the accountable authority. A named human reviews each released document and the process that produced it, and accepts responsibility for it; from 2026 that act is recorded publicly in the *Certified Releases* index below.
+
+---
+
+## Certified Releases
+
+This index is a public, append-only **transparency log**. Each row records the SHA-256 digest of a released file and the human who certified it. **A row, together with the signed tag on the commit that added it, is that person's Human Certification of Responsibility for exactly those bytes.**
+
+> **Certification establishes accountability, not infallibility.** It means a named human reviewed the work and the process that produced it — including any AI assistance and adversarial review — and accepts responsibility for releasing it. It is not peer review, not scientific validation, and not a claim that the work cannot be corrected or falsified.
+
+### What a row means
+
+By adding a row and signing its tag, the certifier states:
+
+> I have reviewed this work and the material process through which it was produced and revised. I have exercised my own judgment in accepting this version for release. AI systems may have assisted in its creation, research, analysis, criticism and revision, but responsibility for the released artifact rests with me. I approve it as representing the claims I am prepared to make from the evidence presently available.
+
+### Levels
+
+| Level | Meaning |
+|---|---|
+| **L1** | Disclosure + author review. No adversarial review on record. |
+| **L2** | L1 + a recorded challenge pass with dispositions. |
+| **L3** | L2 + adversarial review by a separate seat, a full production chain with digests, and an epistemic history. |
+
+### Index
+
+| Artifact | Version | File | SHA-256 | Level | Certifier | Tag | Date |
+|---|---|---|---|---|---|---|---|
+| *CortexOS and the Science of Mind* | v4 | `CortexOS_Science_of_Mind/cortexos_science_of_mind.pdf` | `50ad0db2f7a68fef0e32fa3ecb955537e018a9ab2be4b4745715bccf6d5b81af` | L3 | James P. Dayson, for Auralethi | `cert/csotm-v4` | YYYY-MM-DD |
+
+Documents 1–4 above predate this index. They will be registered at the level of review they actually received, and their records will say so.
+
+Source digests and the full production chain for each certified artifact are in its `CERTIFICATION.md`.
+
+### Verify a file
+
+```
+sha256sum <file>                 # must equal the row's SHA-256
+git fetch --tags
+git tag -v <tag>                 # must be a good signature from the Auralethi key below
+```
+
+Any change to a file changes its digest. A forged row cannot carry a tag signed by the Auralethi key.
+
+### Signing key
+
+Certification tags are signed with the key below, held on a hardware token. Check this fingerprint against an independent source (the Auralethi website) before trusting a signature.
+
+| Key | Fingerprint | Valid from | Status |
+|---|---|---|---|
+| Auralethi certification key | `<fingerprint>` | YYYY-MM-DD | active |
+
+Allowed-signers line, for `git tag -v` with SSH signatures:
+
+```
+<email> namespaces="git" <public key>
+```
+
+Keys are rotated by adding a row, never by editing one.
+
+### Rules of this log
+
+- **Append only.** Rows are never edited or deleted. A superseded version keeps its row; the new version gets a new row.
+- **No force-push, ever.** Branch and tag protection are enabled; certification tags are never moved or deleted.
+- **Withdrawal** is a new row stating that an earlier certification is withdrawn and why.
+
 ---
 
 ## Citation
@@ -100,6 +179,10 @@ A Single-Subject Forensic Case Study. Preprint v1.0, May 12, 2026.
 
 Auralethi. (2026). The Code and the Sword: Bushido, Chivalry, and Human Dignity
 in the AI Age. First Edition.
+
+Dayson, J. P. (2026). CortexOS and the Science of Mind: A Retrospective Mapping of an
+Introspectively Designed Cognitive Architecture to Cognitive Science, Neuroscience
+and Psychology. Preprint v4. Certified L3, tag cert/csotm-v4.
 ```
 
 ## Contact
